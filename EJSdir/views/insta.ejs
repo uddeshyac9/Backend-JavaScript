@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Username</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>This Page Belongs to <%= data.name  %></h1>
+    <p>Followers:  <%=data.followers%></p>
+    <p>Following:  <%=data.following%></p>
+    <button>Follow</button>
+    <button>Message</button>
+    <hr>
+    <h1>Posts</h1>
+    <% for (post of data.posts) { %>
+        <div>
+            <img src=<%=post.image%> alt="img">
+            <p>Likes:<%=post.likes  %> Comments:<%=post.comments%></p>
+        </div>
+       
+    <% } %>
+ 
+    <%- include("includes/footer.ejs") %>
+</body>
+<script src="/js/app.js"></script>
+</html>

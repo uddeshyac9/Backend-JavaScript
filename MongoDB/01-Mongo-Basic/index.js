@@ -82,22 +82,23 @@ dbConnect()
 // }).catch((err) => {
 //     console.log(err);
 // });
-const book =    {
-      title: "Sambhog se Smadhi",
-      author: "Osho",
-      price: 0,
-      genre: ["Fiction", "Adventure","Sexual"],
-      category: "Spritual",
-    };
+//inserting single book
+// const book =    {
+//       title: "Sambhog se Smadhi",
+//       author: "Osho",
+//       price: 0,
+//       genre: ["Fiction", "Adventure","Sexual"],
+//       category: "Spritual",
+//     };
 
-    // Insert the single book into the MongoDB collection using insertOne
-    Book.create(book)
-    .then((result) => {
-      console.log("Book inserted successfully:", result);
-    })
-    .catch((err) => {
-      console.log(err.errors.price.properties.message);
-    });
+//     // Insert the single book into the MongoDB collection using create
+//     Book.create(book)
+//     .then((result) => {
+//       console.log("Book inserted successfully:", result);
+//     })
+//     .catch((err) => {
+//       console.log(err.errors.price.properties.message);
+//     });
   
   
 

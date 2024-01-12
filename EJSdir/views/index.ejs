@@ -1,0 +1,49 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejs</title>
+</head>
+<body>
+
+  <h1>Welcome to Ejs </h1>
+  <h3> <%= ["uddeshya","Choudhary","Webdevloper"][2]  %></h3>
+
+  <!-- Initial content -->
+  <div id="content">
+    <p id="content-1">
+      Overall, EJS is a lightweight and straightforward templating language that facilitates the creation of dynamic HTML content on the server side, especially in Node.js and Express applications.
+    </p>
+
+    <!-- Hidden paragraph initially -->
+    <p id="content-2" style="display: none;">
+      EJS stands for "Embedded JavaScript." It is a simple templating language that allows you to embed JavaScript code within your HTML or other markup files. EJS is often used with Node.js and Express to generate dynamic HTML content on the server side.
+    </p>
+  </div>
+
+  <!-- Button to toggle between Read More and Show Less -->
+  <button onclick="toggleReadMore()" id="read-more-btn">Read More</button>
+  <br>
+  <hr>
+ <%- include("includes/footer.ejs") %>
+  <script>
+    function toggleReadMore() {
+      let content1 = document.getElementById("content-1");
+      let content2 = document.getElementById("content-2");
+      let btnText = document.getElementById("read-more-btn");
+
+      if (content2.style.display === "none") {
+        content1.style.display = "block";
+        content2.style.display = "block";
+        btnText.innerHTML = "Show Less";
+      } else {
+        content1.style.display = "block";
+        content2.style.display = "none";
+        btnText.innerHTML = "Read More";
+      }
+    }
+  </script>
+</body>
+</html>
