@@ -5,7 +5,7 @@ import connectDb from "./db/index.js";
 import path from "path"
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-// import {Chat} from './models/chat.models.js'
+import {Chat} from './models/chat.models.js'
 
 dotenv.config();
 
@@ -37,6 +37,11 @@ connectDb()
 
 app.get('/', (req,res) => {
     res.send("this is root")
+})
+
+app.get('/chat', async (req,res) => {
+    let chats = await Chat.find();
+    res.render('chat',{chats})
 })
 
 
