@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+
+        <h1 class="heading">All users</h1>
+        <table>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Edit Username
+                </th>
+                <th>
+                    Delete User
+                </th>
+            </tr>
+            <% for (user of users) { %>
+            <tr>
+                <td><%= user.id %> </td>
+                <td><%= user.email %></td>
+                <td><%= user.username %></td>
+                <td>
+                    <div>
+                        <a href="http://localhost:8080/user/<%= user.id %>/edit"  id="atag" class="btn">Edit</a>
+                    </div>
+
+                    </td>
+                    <td>
+                        <div>
+                            <a href="http://localhost:8080/user/<%= user.id %>/delete"  id="atag" class="deleteBtn" >Delete</a>
+                        </div>
+                      
+                    </td>
+                    </tr>
+    
+            <% } %>     
+            
+        </table>
+    </div>
+    
+    
+</body>
+</html>

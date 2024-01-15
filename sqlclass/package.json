@@ -1,20 +1,21 @@
 {
-  "name": "03-chatapp",
+  "name": "sqlclass",
   "version": "1.0.0",
-  "description": "",
+  "description": "my sql database",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.3.1",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "method-override": "^3.0.0",
-    "mongoose": "^8.0.4"
+    "mysql2": "^3.6.5",
+    "uuidv4": "^6.2.13"
   }
 }
