@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>New Order Form</h1>
+
+    <form method="post" action="/submitOrder">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required>
+
+        <label for="salePrice">Sale Price:</label>
+        <input type="text" id="salePrice" name="salePrice" >
+        <label for="cardName">Card Name:</label>
+        <input type="text" id="cardName" name="cardName" required>
+
+        <label for="billGenerated">Bill Generated Date:</label>
+        <input type="text" id="billGenerated" name="billGenerated" required>
+
+        <label for="delivered">Delivered:</label>
+        <input type="text" id="delivered" name="delivered" required>
+
+
+        <!-- Add other fields based on your data -->
+        <!-- Ensure that the name attributes match your data object properties -->
+
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity" required>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required>
+
+        <label for="bill_paid">Bill Paid:</label>
+        <input type="text" id="bill_paid" name="bill_paid" required>
+
+        <button type="submit" class="btn">Submit Order</button>
+    </form>
+</body>
+</html>

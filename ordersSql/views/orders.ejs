@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Orders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+
+        <h1 class="heading">All Orders</h1>
+        <table>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Sale Price
+                </th>
+                <th>Card Name</th>
+                <th>
+                    Bill Generated Date
+                </th>
+                <th>
+                    Delivered
+                </th>
+                <th>
+                    quantity
+                </th>
+                <th>
+                    color
+                </th>
+                <th>Bill Paid</th>
+               
+                <th>
+                    Edit Order
+                </th>
+                <th>Delete Orders</th>
+            </tr>
+            <% for (order of orders) { %>
+            <tr>
+                <td><%= order.id %> </td>
+                <td><%= order.name %></td>
+                <td><%= order.price %></td>
+                <td><%= order.salePrice %></td>
+                <td><%= order.cardName %></td>
+                <td><%= order.billGenerated %></td>
+                <td><%= order.delivered %></td>
+                <td><%= order.quantity %></td>
+                <td><%= order.color %></td>
+                <td><%= order.bill_paid %></td>
+                <td>
+                    <div>
+                        <a href="http://localhost:8080/orders/<%= order.id %>/edit"  id="atag" class="btn">Edit</a>
+                    </div>
+
+                    </td>
+                    <td>
+                        <form method="post" action="/orders/<%= order.id %>?_method=DELETE">
+                            <button class="deleteBtn">Delete</button>
+                        </form>
+                    </td>
+                    </tr>
+    
+            <% } %>     
+            
+        </table>
+    </div>
+    
+    
+</body>
+</html>

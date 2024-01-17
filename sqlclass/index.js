@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import dbconnect from "./db/database.js";
 import dotenv from 'dotenv';
 import methodOverride from "method-override";
-import { log } from "console";
+
 
 
 const app = express();
@@ -40,11 +40,11 @@ const connection = await dbconnect(); // Establish the database connection
 app.get('/', async (req, res) => {
   try {
     
-    const [result] = await connection.query("SELECT COUNT(*) AS count FROM user");
+    const [result] = await connection.query("SELECT COUNT(*) AS count FROM mobiles");
     // console.log("Query succesfull");
     // console.log(result);
     let userCount = result[0].count;
-    res.render("home", {userCount});
+    res.render("home", {mobileCount});
      
     // connection.end();  Close the connection after executing the query
   } catch (err) {
