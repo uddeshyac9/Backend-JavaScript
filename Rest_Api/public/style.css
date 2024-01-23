@@ -1,0 +1,112 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.name {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+.post {
+    width: 800px;
+    background-color: cadetblue;
+}
+
+
+.heading {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #fff;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+h2 {
+    color: red;
+}
+h2:hover {
+   background-color: lightslategray;
+   color: #007bff;
+   transition: all; 
+}
+
+p {
+    color: #555;
+    margin: 0;
+}
+
+.content {
+    color: #333;
+}
+
+.Create {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Create h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.btn {
+    background-color: #7b00ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     /* Remove the default underline for links */
+            display: inline-block; 
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+.deleteBtn {
+    background-color: rgb(197, 45, 45);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.deleteBtn:hover {
+    background-color: #0056b3;
+}
+.btn-container {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    display: flex;
+}
+#atag {
+    text-decoration: none;
+}

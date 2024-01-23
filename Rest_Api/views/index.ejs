@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>All Posts</title>
+</head>
+<body>
+    <div class="container"> 
+        <h1 class="heading">Quaro Post</h1>
+        <% posts.map((post) => { %>
+            <div class="post" key="<%= post.id %>">
+                <div class="name">
+                    <h2>
+                        <a href="http://localhost:8080/posts/<%= post.id %>" id="atag"><%= post.name %></a>
+                    </h2>
+                    <p>@<%= post.username %></p>
+                </div>
+                <p class="content"><%= post.content %></p>
+                <div class="btn-container">
+                    <a href="http://localhost:8080/posts/<%= post.id %>/edit"  id="atag" class="btn">Edit</a>
+                    <Form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                        <button class="deleteBtn">Delete</button>
+                    </Form>
+                </div>
+                
+            </div>
+        <% }); %>
+        
+        <div class="btn-container">
+            <a href="http://localhost:8080/posts/new" id="atag" class="btn">Create New Post</a>
+        </div>
+    </div>
+</body>
+</html>

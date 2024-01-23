@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific Post with id</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <div class="post">
+        <% if (post) { %>
+            <p>Id:<%= post.id %></p>
+            <div class="name">
+                <h2><%= post.name %></h2>
+                <p>@<%= post.username %></p>
+            </div>
+            <p class="content"><%= post.content %></p>
+            <div class="btn-container">
+                <a href="http://localhost:8080/posts/<%= post.id %>/edit"  id="atag" class="btn">Edit</a>
+                <Form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                    <button class="deleteBtn">Delete</button>
+                </Form>
+            </div>
+        <% } else { %>
+            <p>Post not found.</p>
+        <% } %>
+    </div>
+    
+    
+</body>
+</html>
