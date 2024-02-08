@@ -69,6 +69,19 @@ app.get('/orders', async (req,res) => {
 app.get('/orders/new', (req,res) => {
   res.render('newOrder');
 });
+//edit page
+app.get('/orders/:id/edit', async (req, res) => {
+  try {
+      const orderId = req.params.id;
+      const [order] = await connection.query('SELECT * FROM mobiles WHERE id = ?', [orderId]);
+      // console.log(order);
+      res.render('edit', { order: order[0] });
+  } catch (error) {
+      console.error("Error fetching order for edit:", error);
+      res.status(500).send("Internal Server Error");
+  }
+});
+
 
 
 
@@ -146,3 +159,59 @@ app.delete('/orders/:id', async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
+// edit patch request 
+app.patch('/orders/:id', async (req, res) => {
+  try {
+    const orderId = req.params.id;
+    const updatedOrder = req.body;
+
+    // SQL query to update all columns of the order in the 'mobiles' table
+    const query = `
+      UPDATE mobiles
+      SET
+        name = ?,
+        price = ?,
+        salePrice = ?,
+        cardName = ?,
+        billGenerated = ?,
+        delivered = ?,
+        quantity = ?,
+        color = ?,
+        bill_paid = ?,
+        payment_received = ?
+      WHERE id = ?
+    `;
+
+    // Execute the query and handle the result
+    const [result] = await connection.query(query, [
+      updatedOrder.name,
+      updatedOrder.price,
+      updatedOrder.salePrice,
+      updatedOrder.cardName,
+      updatedOrder.billGenerated,
+      updatedOrder.delivered,
+      updatedOrder.quantity,
+      updatedOrder.color,
+      updatedOrder.bill_paid,
+      updatedOrder.payment_received,
+      orderId
+    ]);
+
+    // Check if any rows were affected
+    if (result.affectedRows > 0) {
+      console.log(`Order with ID ${orderId} updated successfully`);
+      // Handle success, redirect, or send a success response accordingly
+      res.redirect('/orders');
+    } else {
+      console.log(`Order with ID ${orderId} not found`);
+      // Handle case where the order with the given ID was not found
+      res.status(404).send("Order not found");
+    }
+  } catch (error) {
+    // Handle error, log the details, and send an error response
+    console.error("Error updating order:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+

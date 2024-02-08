@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Order</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="edit-heading" class="heading">Edit Order</h1>
+        <form id="edit-form" class="edit-form" method="post" action="/orders/<%= order.id %>?_method=PATCH">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" name="name" value="<%= order.name %>" required>
+
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" value="<%= order.price %>" required>
+
+            <label for="salePrice">Sale Price:</label>
+            <input type="text" id="salePrice" name="salePrice" value="<%= order.salePrice %>" required>
+
+            <label for="cardName">Card Name:</label>
+            <input type="text" id="cardName" name="cardName" value="<%= order.cardName %>" required>
+
+            <label for="billGenerated">Bill Generated Date:</label>
+            <input type="text" id="billGenerated" name="billGenerated" value="<%= order.billGenerated %>" required>
+
+            <label for="delivered">Delivered:</label>
+            <input type="text" id="delivered" name="delivered" value="<%= order.delivered %>" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity" value="<%= order.quantity %>" required>
+
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" value="<%= order.color %>" required>
+
+            <label for="bill_paid">Bill Paid:</label>
+            <input type="text" id="bill_paid" name="bill_paid" value="<%= order.bill_paid %>" required>
+
+            <label for="payment_received">Payment Received:</label>
+            <input type="text" id="payment_received" name="payment_received" value="<%= order.payment_received %>" required>
+
+            <button id="update-btn" class="update-btn" type="submit">Update Order</button>
+        </form>
+    </div>
+</body>
+</html>
+
